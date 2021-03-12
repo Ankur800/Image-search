@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#main-div.active {
+    position: absolute;
+    top: 30px;
+    transition: 0.5s;
+}
+
+.logo-div {
+    padding: 20px;
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin: auto;
+    color: #fff;
+    font-size: 3em;
+    min-height: 100px;
+}
+
+.search-div {
+    height: 300px;
+    width: 600px;
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    transition: 0.5s;
+}
+
+.search-div.active {
+    height: 100px;
+    position: fixed;
+    top: 30px;
+    left: 400px;
+    right: calc(40%);
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.input {
+    border: none;
+    height: 40px;
+    width: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 20px;
+    transition: width 0.5s;
+}
+
+input.active {
+    animation: increaseWidth 1s linear;
+    width: 300px;
+}
+
+@keyframes increaseWidth {
+    0% {
+        width: 10px;
+    }
+    100% {
+        width: 300px;
+    }
+}
+
+.input:focus {
+    outline: none;
+}
+
+.expand-btn {
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.angle {
+    position: relative;
+    top: 7px;
+    left: 5px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    font-size: 30px;
+    color: #000;
+}
